@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 using UnityEngine.InputSystem;
+=======
+>>>>>>> 73d2e2c (Chore:Player행동,애니메이션 추가)
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+<<<<<<< HEAD
     Vector2 movementInput;
     Rigidbody2D rigid2D;
     Animator animator;
@@ -57,5 +61,34 @@ public class PlayerController : MonoBehaviour
             //임시로 죽는거 해놓음
             // GameManager.EndGame();
         }
+=======
+    Rigidbody2D rigid2D;
+    // Start is called before the first frame update
+    void Start()
+    {
+        this.rigid2D = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            transform.Translate(-1,0,0);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            transform.Translate(1,0,0);
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            transform.Translate(0,1,0);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            transform.Translate(0,-1,0);
+        }
+
+>>>>>>> 73d2e2c (Chore:Player행동,애니메이션 추가)
     }
 }
