@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
         this.rigid2D = GetComponent<Rigidbody2D>();
         this.animator = GetComponent<Animator>();
         rend = GetComponent<SpriteRenderer>();
+        this.animator.SetInteger("hp", 10);
     }
 
     // Update is called once per frame
@@ -40,9 +41,9 @@ public class PlayerController : MonoBehaviour
             this.animator.SetBool("isWalking", false);
         }
         
-        if (true) // hp 0일떄
-        {
-            this.animator.SetInteger("hp", 0);
-        }
+        // if (true) // hp 0일떄
+        // {
+        //     this.animator.SetInteger("hp", 0);
+        // }
     }
 }
