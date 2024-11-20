@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
         this.rigid2D = GetComponent<Rigidbody2D>();
         this.animator = GetComponent<Animator>();
         rend = GetComponent<SpriteRenderer>();
+
         this.animator.SetInteger("hp", 3);
     }
 
