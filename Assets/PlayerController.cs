@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
         this.rigid2D = GetComponent<Rigidbody2D>();
         this.animator = GetComponent<Animator>();
         rend = GetComponent<SpriteRenderer>();
-        this.animator.SetInteger("hp", 10);
+        this.animator.SetInteger("hp", 3);
     }
 
     // Update is called once per frame
@@ -45,5 +45,17 @@ public class PlayerController : MonoBehaviour
         // {
         //     this.animator.SetInteger("hp", 0);
         // }
+    }
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Finish"){
+            GameManager.EndGame();
+        }
+        else if (other.gameObject.tag == "Creature"){
+            // hp 감소.
+            this.animator.SetTrigger("creatureTrigger");
+            // this.animator.SetInteger("hp", 0);
+            //임시로 죽는거 해놓음
+            // GameManager.EndGame();
+        }
     }
 }
